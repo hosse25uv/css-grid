@@ -1,0 +1,190 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+#wrapper {
+    background-color: white;
+    height: 100vh;
+    display: grid;
+    grid-template-columns:
+    1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 
+    100px min-content 480px min-content 100px;
+    grid-template-areas:
+    "header header header header header header"
+    "bottom-header bottom-header bottom-header bottom-header bottom-header bottom-header"
+    ". main main main main ."
+    ". section section section section ."
+    "footer footer footer footer footer footer";
+}
+
+header, footer {
+    background-color: whitesmoke;
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    padding: 5px 30px;
+}
+
+header .list-group, footer .list-group {
+    list-style: none;
+    padding: 0;
+    margin-right: 30px;
+    display: flex;
+}
+
+header .list-group a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 15px 30px;
+    margin: 0 8px;
+}
+
+header .list-group a:hover, header .list-group .active {
+    text-decoration: none;
+    color: darkslategrey;
+    background-color: ghostwhite;
+    border: 1px solid darkslategrey;
+    border-radius: 0;
+}
+
+
+.bottom-header {
+    background-image: url("../img/Sound.jpg");
+    grid-area: bottom-header;
+    background-size: cover;
+    background-position: center center;
+}
+
+.lead-header .lead {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    margin: 17vh auto;
+    padding: 0 0 0 25px;
+    min-height: 30vh;
+    max-width: 60vw;
+    color: floralwhite;
+}
+
+main {
+    background-color: black;
+    grid-area: main;
+    margin-top: 35px;
+}
+
+.elementor-video {
+    display: grid;
+    width: 65vw;
+    max-width: 960px;
+    padding: 25px 0 25px 0;
+    height: 55vh;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+aside {
+    background-color: lightsteelblue;
+    grid-area: aside;
+    display: none;
+}
+
+section {
+    grid-area: section;
+    padding: 25px;
+    background-color: lightgrey;
+    margin: 35px 0 0 0;
+    border: 1px solid rgba(128, 128, 128, 0.603);
+}
+
+section h3, section p {
+    color: rgb(0, 0, 0);
+}
+
+/* Buttons */
+
+.cta {
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+    color: black;
+    border-radius: 0;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+    background-color: #0707077a;
+}
+
+.cta:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.btn {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+    color: black;
+    display: flex;
+    border-radius: 0;
+    max-width: 77px;
+    padding: 10px;
+    margin: 15px 0 15px 0;
+    background-color: whitesmoke;
+}
+
+.btn:hover {
+    background-color: lightgrey;
+    color: rgb(36, 36, 36);
+}
+
+.footer {
+    background-color: lightgrey;
+    grid-area: footer;
+    margin-top: 35px;
+    border-top: 1px solid rgba(139, 139, 139, 0.575);
+}
+
+.footer span {
+    margin-left: 30px;
+}
+
+footer .list-group a {
+    text-decoration: none;
+    padding: 15px 30px 15px 0;
+    margin: 0 8px;
+    color: black;
+}
+
+footer .list-group a:hover {
+    color: rgba(0, 0, 0, 0.63);
+}
+
+
+@media screen and (max-width: 560px){
+    header {
+        background-color: white;
+    }
+    #wrapper {
+        grid-template-areas:
+        "header header header header header header"
+        "bottom-header bottom-header bottom-header bottom-header bottom-header bottom-header"
+        "main main main main main main"
+        "section section section section section section"
+        "footer footer footer footer footer footer";
+    }
+
+}
